@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="fr">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <title>Camera kit demooo</title>
-    <meta name="description" content="Camera kit demo" />
-    <meta name="robots" content="noindex" />
-
-    <link href="index.css" rel="stylesheet" />
-    <script src="./packed.js"></script>
+    <title>Recording Video</title>
   </head>
-
   <body>
-    <canvas id="canvas"></canvas>
-    <video id="video" style="display: none" autoplay muted playsinline></video>
+    <section>
+      <canvas id="canvas"></canvas>
+    </section>
+    <section style="position: absolute; top: 0; height: 100px">
+      <button id="start">Start Recording</button>
+      <button id="stop" disabled>Stop Recording</button>
+    </section>
+    <section id="video-container" style="display: none">
+      <video loop controls autoplay id="video"></video>
+      <div>
+        <button id="download">Download Video</button>
+      </div>
+    </section>
+    <script type="module" src="packed.js"></script>
   </body>
 </html>

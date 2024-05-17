@@ -1,20 +1,28 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
-  entry: './src/main.js',
+  entry: "./src/assets/newScript.js", // Ensure this points to your JavaScript entry file
   output: {
-    filename: 'packed.js',
-    path: path.resolve(__dirname, 'docs'),
+    filename: "packed.js",
+    path: path.resolve(__dirname, "docs"),
+  },
+  resolve: {
+    extensions: [".js"], // Ensure .js is included in extensions
+  },
+  module: {
+    rules: [
+      // Add any loaders you need, for example, for CSS or other assets
+    ],
   },
   optimization: {
-    minimize: false
+    minimize: false,
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'docs'),
+      directory: path.join(__dirname, "docs"),
     },
     client: {
-      overlay: false
+      overlay: false,
     },
     compress: true,
     port: 9000,
